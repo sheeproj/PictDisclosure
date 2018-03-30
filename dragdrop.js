@@ -1,23 +1,27 @@
 document.ondragover = document.ondrop = function(e) {
-    e.preventDefault(); // イベントの伝搬を止めて、アプリケーションのHTMLとファイルが差し替わらないようにする
+    e.preventDefault();
     return false;
 };
+
 var holder = document.getElementById('holder');
-/** hoverエリアにドラッグされた場合 */
 holder.ondragover = function () {
     return false;
 };
-/** hoverエリアから外れた or ドラッグが終了した */
 holder.ondragleave = holder.ondragend = function () {
     return false;
 };
-/** hoverエリアにドロップされた */
 holder.ondrop = function (e) {
-    e.preventDefault(); // イベントの伝搬を止めて、アプリケーションのHTMLとファイルが差し替わらないようにする
+    e.preventDefault();
 
     var file = e.dataTransfer.files[0];
-    holder.innerText = file.name;
+
+    var title = document.getElementById('title');
+
+    title.innerText = 'PictDisclosure : ' + file.name;
     console.log(file.path);
+
+    var image = document.getElementById('image');
+    image.src = file.path;
     
     return false;
 };
