@@ -3,7 +3,7 @@
     {
       "target_name": "addon",
       "sources": [
-        "wrapper.cpp"
+        "cpp/wrapper.cpp"
       ],
       "include_dirs": [
          "<!(node -e \"require('nan')\")"
