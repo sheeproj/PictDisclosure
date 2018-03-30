@@ -1,0 +1,33 @@
+.frame {
+    width:100%;
+    height:100%;
+    border-style:solid;
+}
+
+.aaa{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除、ここがポイント*/
+    position: relative; /*DWで正常にプレビューできるようになります。*/
+    zoom:1; /*IE6でレイアウト崩れを防ぐためのものです。*/ 
+    border-style:solid;
+}
+ 
+.bbb{
+    width: 70%;
+    height: 100%;
+    float: left;    
+    border-style:solid;
+}
+ 
+.ccc{
+    width: 28%;
+    height: 100%;
+    float: right;
+    border-style:solid;
+}
+
+html, body {
+    height: 100%
+}

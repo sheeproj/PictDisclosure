@@ -1,0 +1,24 @@
+{
+  "name": "pictseeker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheeproj/pictseeker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheeproj/pictseeker/issues"
+  },
+  "homepage": "https://github.com/sheeproj/pictseeker#readme",
+  "dependencies": {
+    "asar": "^0.14.3",
+    "electron": "^1.8.4"
+  },
+  "description": ""
+}
