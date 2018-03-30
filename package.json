@@ -16,9 +16,9 @@
     "url": "https://github.com/sheeproj/pictseeker/issues"
   },
   "homepage": "https://github.com/sheeproj/pictseeker#readme",
-  "dependencies": {
-    "asar": "^0.14.3",
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {
     "electron": "^1.8.4"
-  },
-  "description": ""
+  }
 }

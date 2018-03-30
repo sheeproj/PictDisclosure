@@ -22,6 +22,9 @@ holder.ondrop = function (e) {
 
     var image = document.getElementById('image');
     image.src = file.path;
-    
+
+    var myExtension = require('./cpp/build/Release/addon');
+    console.log(myExtension.hello()); // hello, world が出力される
+
     return false;
 };
