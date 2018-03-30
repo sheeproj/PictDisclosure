@@ -23,9 +23,8 @@ holder.ondrop = function (e) {
     var image = document.getElementById('image');
     image.src = file.path;
 
-    var myExtension = require('./build/Release/addon');
-    console.log(myExtension.hello());
-    console.log(myExtension.test());
+    var addon = require('./build/Release/addon');
+    console.log(addon.Histogram(file.path));
 
     return false;
 };

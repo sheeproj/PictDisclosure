@@ -1,23 +1,27 @@
-#include <node.h>
-#include <opencv2/opencv.hpp>
+#include <nan.h>
+#include "analyze.h"
 
-void HelloFunction(const v8::FunctionCallbackInfo<v8::Value>& args)
-{
-    v8::Isolate* isolate = args.GetIsolate();
-    args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "hello, world"));
+void Method(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+    info.GetReturnValue().Set(Nan::New("world").ToLocalChecked());
 }
 
-void Test(const v8::FunctionCallbackInfo<v8::Value>& args)
-{
-  cv::Mat m;
-    v8::Isolate* isolate = args.GetIsolate();
-    args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "opencv"));
+void Histogram(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+
+    if (info.Length() <= 0) {
+        return;
+    }
+    v8::String::Utf8Value str(info[0]->ToString());
+    std::string filename = std::string(*str);
+    Analyze::ReadImage(filename);
+
+    //info.GetReturnValue().Set(Nan::New("world").ToLocalChecked());
 }
 
-void init(v8::Local<v8::Object> exports)
-{
-    NODE_SET_METHOD(exports, "test", Test);
-    NODE_SET_METHOD(exports, "hello", HelloFunction);
+void Init(v8::Local<v8::Object> exports) {
+    exports->Set(Nan::New("hello").ToLocalChecked(),
+                 Nan::New<v8::FunctionTemplate>(Method)->GetFunction());
+    exports->Set(Nan::New("Histogram").ToLocalChecked(),
+                 Nan::New<v8::FunctionTemplate>(Histogram)->GetFunction());
 }
 
-NODE_MODULE(addon, init);
+NODE_MODULE(hello, Init)
