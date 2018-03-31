@@ -20,7 +20,8 @@
     "dependencies": {},
     "description": "",
     "devDependencies": {
-      "electron": "^1.8.4",
+        "electron": "^1.8.4",
+        "exif-js": "^2.3.0",
         "nan": "^2.10.0"
     }
 }

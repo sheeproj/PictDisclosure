@@ -18,7 +18,7 @@ void Histogram(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
     Analyze analyze = Analyze();
     analyze.ReadImage(filename);
-    analyze.CreateHistogramImage(histoimage_filename, 400, 300);
+    analyze.CreateHistogramImage(histoimage_filename, 500, 300);
 
     //info.GetReturnValue().Set(Nan::New("world").ToLocalChecked());
 

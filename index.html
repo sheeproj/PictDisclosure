@@ -16,6 +16,7 @@
   <body ng-app="app" ng-controller="RootCtrl as root" id="holder">
     
     <script type="text/javascript" src="dragdrop.js"></script>
+    <script src="node_modules/exif-js/exif.js"></script>
     
     <div class="leftframe">
       <img id="image">
@@ -28,8 +29,8 @@
     </div>
 
     <div class="rightframe">
-      <img id="histoimage">
-      </img>
+      <img id="histoimage"> </img>
+      <pre id="exiftext"> </pre>
     </div>
 
   </body>

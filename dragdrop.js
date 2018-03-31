@@ -24,14 +24,29 @@ holder.ondrop = function (e) {
     var histoimage_filepath = './histo.bmp';
     console.log(addon.Histogram(file.path, histoimage_filepath));
 
+    var timestamp = new Date().getTime();
+
     // show source image
     var image = document.getElementById('image');
-    image.src = file.path;
+    image.src = file.path + "?" + timestamp;
 
     // show histogram image
     var histoimage = document.getElementById('histoimage');
-    var timestamp = new Date().getTime();
     histoimage.src = histoimage_filepath + "?" + timestamp;
+
+    // show EXIF data
+    image.onload = function() {
+
+        image.exifdata = null;
+        EXIF.getData(this, function() {
+            console.log(image);
+            console.log(image.src);
+            var allMetaData = EXIF.getAllTags(image);
+            console.log(allMetaData);
+            document.getElementById('exiftext').innerHTML = JSON.stringify(allMetaData, null, "\t");
+        });
+    }
+
 
     return false;
 };
