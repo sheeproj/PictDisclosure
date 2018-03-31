@@ -9,7 +9,9 @@ Install npm packages that are to your environment in package.json
 
 ## Build & Run
 
+```bash
 $ npm run build
+```
 
 ## Usage
 
