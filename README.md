@@ -1,6 +1,6 @@
 # PictDisclosure : GUI application to display JPEG image, EXIF data and color histogram.
 
-this application is written just for nodejs/node-gyp study.
+this application is written just for nodejs/node-gyp practice.
 
 ## Platform
 
