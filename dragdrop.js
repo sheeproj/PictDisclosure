@@ -20,11 +20,17 @@ holder.ondrop = function (e) {
     title.innerText = 'PictDisclosure : ' + file.name;
     console.log(file.path);
 
+    var addon = require('./build/Release/addon');
+    var histoimage_filename = './histo.bmp';
+    console.log(addon.Histogram(file.path, histoimage_filename));
+
+    // show source image
     var image = document.getElementById('image');
     image.src = file.path;
 
-    var addon = require('./build/Release/addon');
-    console.log(addon.Histogram(file.path));
+    // show histogram image
+    var histoimage = document.getElementById('histoimage');
+    histoimage.src = histoimage_filename;
 
     return false;
 };

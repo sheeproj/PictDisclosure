@@ -7,12 +7,18 @@ void Method(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
 void Histogram(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
-    if (info.Length() <= 0) {
+    if (info.Length() < 2) {
         return;
     }
-    v8::String::Utf8Value str(info[0]->ToString());
-    std::string filename = std::string(*str);
-    Analyze::ReadImage(filename);
+    v8::String::Utf8Value str0(info[0]->ToString());
+    std::string filename = std::string(*str0);
+
+    v8::String::Utf8Value str1(info[1]->ToString());
+    std::string histoimage_filename = std::string(*str1);
+
+    Analyze analyze = Analyze();
+    analyze.ReadImage(filename);
+    analyze.CreateHistogramImage(histoimage_filename);
 
     //info.GetReturnValue().Set(Nan::New("world").ToLocalChecked());
 }
