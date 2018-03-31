@@ -4,9 +4,8 @@
 
 ## Platform
 
-Ubuntu 16.04LTS
-nodejs v9.10.0
-node-gyp v3.6.2
+Ubuntu 16.04LTS, nodejs v9.10.0, node-gyp v3.6.2
 
-## Usage
+## Build & Run
 
+$ npm run build
