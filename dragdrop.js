@@ -21,8 +21,8 @@ holder.ondrop = function (e) {
     console.log(file.path);
 
     var addon = require('./build/Release/addon');
-    var histoimage_filename = './histo.bmp';
-    console.log(addon.Histogram(file.path, histoimage_filename));
+    var histoimage_filepath = './histo.bmp';
+    console.log(addon.Histogram(file.path, histoimage_filepath));
 
     // show source image
     var image = document.getElementById('image');
@@ -30,7 +30,8 @@ holder.ondrop = function (e) {
 
     // show histogram image
     var histoimage = document.getElementById('histoimage');
-    histoimage.src = histoimage_filename;
+    var timestamp = new Date().getTime();
+    histoimage.src = histoimage_filepath + "?" + timestamp;
 
     return false;
 };
