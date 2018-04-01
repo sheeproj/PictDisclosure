@@ -1,5 +1,5 @@
 {
-    "name": "pictseeker",
+    "name": "PictDisclosure",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sheeproj/pictseeker.git"
+        "url": "git+https://github.com/sheeproj/PictDisclosure.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/sheeproj/pictseeker/issues"
+        "url": "https://github.com/sheeproj/PictDisclosure/issues"
     },
-    "homepage": "https://github.com/sheeproj/pictseeker#readme",
+    "homepage": "https://github.com/sheeproj/PictDisclosure#readme",
     "dependencies": {},
     "description": "",
     "devDependencies": {
