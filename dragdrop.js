@@ -39,11 +39,37 @@ holder.ondrop = function (e) {
 
         image.exifdata = null;
         EXIF.getData(this, function() {
-            console.log(image);
-            console.log(image.src);
+
             var allMetaData = EXIF.getAllTags(image);
-            console.log(allMetaData);
-            document.getElementById('exiftext').innerHTML = JSON.stringify(allMetaData, null, "\t");
+
+            var tbody = document.getElementById("tbodyID");
+            tbody.innerHTML = '';
+
+            var thead = document.createElement('thead');
+            var tr0 = document.createElement('tr');
+            var td00 = document.createElement('td');
+            td00.innerHTML = 'Tag';
+            tbody.appendChild(td00);
+            var td01 = document.createElement('td');
+            td01.innerHTML = 'Value';
+            tbody.appendChild(td01);
+            tbody.appendChild(tr0);
+            
+            for (var m in allMetaData) {
+                var tr1 = document.createElement('tr');
+
+                // tag
+                var td10 = document.createElement('td');
+                td10.innerHTML = m;
+                tbody.appendChild(td10);
+
+                // value
+                var td11 = document.createElement('td');
+                td11.innerHTML = allMetaData[m];
+                tbody.appendChild(td11);
+
+                tbody.appendChild(tr1);
+            }
         });
     }
 
