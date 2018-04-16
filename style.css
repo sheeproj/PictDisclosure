@@ -21,6 +21,7 @@ html,head {
 
 body {
     height: 97%;
+    margin: 2px 2px 2px 2px;
 }
 
 img {
@@ -28,14 +29,19 @@ img {
     max-height: 100%;
 }
 
-table, th, td {
+table {
     border-collapse: collapse;
     width: 100%;
     table-layout:fixed;
+}
+th, td {
     word-wrap: break-word;
-    border: 1px solid black;
+    border: 0.5px solid black;
+    font-size:20%;
 }
 
+/*
 thead { 
-    background-color: gray;
+    background-color: black;
 }
+*/

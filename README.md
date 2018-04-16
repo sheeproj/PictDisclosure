@@ -11,6 +11,7 @@ Install opencv(-lopencv_core, -lopencv_highgui), nodejs and node-gyp to your env
 ## Build & Run
 
 ```bash
+$ git clone https://github.com/sheeproj/PictDisclosure
 $ cd PictDisclosure
 $ npm install
 $ npm run build
