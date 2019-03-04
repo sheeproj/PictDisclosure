@@ -11,7 +11,9 @@
       ],
       "libraries": [
         "-lopencv_core",
-        "-lopencv_highgui"
+        "-lopencv_highgui",
+        "-lopencv_imgproc",
+        "-lopencv_imgcodecs"
       ],
       "cflags": [ "-std=c++11" ]
     }
